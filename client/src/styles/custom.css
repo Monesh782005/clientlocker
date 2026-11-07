@@ -1,0 +1,445 @@
+/* client/src/styles/custom.css */
+/* Custom styles that extend Bootstrap — brand colors and component overrides */
+
+/* ===== Brand Colors ===== */
+:root {
+  --cl-primary: #1a3a5c;
+  --cl-primary-dark: #0f2a45;
+  --cl-secondary: #2e86de;
+  --cl-accent: #27ae60;
+  --cl-accent-dark: #1e8c4c;
+  --cl-light: #f8f9fa;
+  --cl-lighter: #ffffff;
+  --cl-dark: #1e272e;
+  --cl-muted: #6c757d;
+  --cl-border: #e9ecef;
+}
+
+/* ===== Global ===== */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--cl-dark);
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+.cl-navbar {
+  background-color: var(--cl-primary);
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cl-navbar .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.cl-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
+}
+
+.cl-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.cl-btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.4rem 1.4rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.cl-btn-outline-light:hover {
+  background-color: #ffffff;
+  color: var(--cl-primary);
+  border-color: #ffffff;
+}
+
+/* ===== Hero Section ===== */
+.cl-hero {
+  background: linear-gradient(135deg, var(--cl-primary) 0%, var(--cl-primary-dark) 100%);
+  color: #ffffff;
+  padding: 6rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cl-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: var(--cl-lighter);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.cl-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.cl-hero .lead {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+
+.cl-hero-visual {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.cl-hero-stat {
+  text-align: center;
+  padding: 1rem;
+}
+
+.cl-hero-stat .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cl-hero-stat .stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+/* ===== Buttons ===== */
+.cl-btn-primary {
+  background-color: var(--cl-accent);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.cl-btn-primary:hover {
+  background-color: var(--cl-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
+  color: #ffffff;
+}
+
+.cl-btn-secondary {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+}
+
+.cl-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ===== Features Section ===== */
+.cl-features {
+  padding: 5rem 0;
+  background-color: var(--cl-lighter);
+}
+
+.cl-section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--cl-primary);
+  margin-bottom: 0.75rem;
+}
+
+.cl-section-subtitle {
+  font-size: 1.1rem;
+  color: var(--cl-muted);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.cl-feature-card {
+  background: #ffffff;
+  border: 1px solid var(--cl-border);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.cl-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--cl-secondary);
+}
+
+.cl-feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.6rem;
+}
+
+.cl-feature-icon.blue {
+  background-color: rgba(46, 134, 222, 0.1);
+  color: var(--cl-secondary);
+}
+
+.cl-feature-icon.green {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: var(--cl-accent);
+}
+
+.cl-feature-icon.navy {
+  background-color: rgba(26, 58, 92, 0.1);
+  color: var(--cl-primary);
+}
+
+.cl-feature-card h5 {
+  font-weight: 700;
+  color: var(--cl-dark);
+  margin-bottom: 0.75rem;
+}
+
+.cl-feature-card p {
+  color: var(--cl-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* ===== How It Works Section ===== */
+.cl-how-it-works {
+  padding: 5rem 0;
+  background-color: var(--cl-light);
+}
+
+.cl-step {
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.cl-step-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cl-secondary), var(--cl-primary));
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 4px 12px rgba(46, 134, 222, 0.3);
+}
+
+.cl-step h5 {
+  font-weight: 700;
+  color: var(--cl-dark);
+  margin-bottom: 0.5rem;
+}
+
+.cl-step p {
+  color: var(--cl-muted);
+  font-size: 0.95rem;
+}
+
+.cl-step-connector {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cl-step-connector {
+    display: block;
+    position: absolute;
+    top: 28px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--cl-border) 0px,
+      var(--cl-border) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    z-index: 0;
+  }
+}
+
+/* ===== Testimonials Section ===== */
+.cl-testimonials {
+  padding: 5rem 0;
+  background-color: var(--cl-lighter);
+}
+
+.cl-testimonial-card {
+  background: #ffffff;
+  border: 1px solid var(--cl-border);
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+}
+
+.cl-testimonial-card::before {
+  content: '\201C';
+  font-size: 4rem;
+  color: var(--cl-secondary);
+  opacity: 0.15;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.cl-testimonial-text {
+  color: var(--cl-dark);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cl-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cl-testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cl-secondary), var(--cl-primary));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cl-testimonial-name {
+  font-weight: 700;
+  color: var(--cl-dark);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.cl-testimonial-role {
+  font-size: 0.8rem;
+  color: var(--cl-muted);
+  margin-bottom: 0;
+}
+
+/* ===== CTA Section ===== */
+.cl-cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--cl-primary) 0%, var(--cl-primary-dark) 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.cl-cta h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cl-cta p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 550px;
+  margin: 0 auto 2rem;
+}
+
+/* ===== Footer ===== */
+.cl-footer {
+  background-color: var(--cl-dark);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3rem 0 1.5rem;
+}
+
+.cl-footer h6 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.cl-footer a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.cl-footer a:hover {
+  color: #ffffff;
+}
+
+.cl-footer-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cl-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .cl-hero {
+    padding: 4rem 0 3.5rem;
+    text-align: center;
+  }
+
+  .cl-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .cl-hero .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cl-hero-visual {
+    margin-top: 2rem;
+  }
+
+  .cl-section-title {
+    font-size: 1.8rem;
+  }
+}
