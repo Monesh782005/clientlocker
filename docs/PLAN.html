@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ClientLocker — Project Plan</title>
+<style>
+  @page { margin: 1.5cm 2cm; size: A4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: #1e272e; line-height: 1.5; font-size: 11pt; padding: 1.5cm 2cm; }
+  h1 { font-size: 20pt; color: #1a3a5c; border-bottom: 3px solid #2e86de; padding-bottom: 6px; margin-bottom: 12px; }
+  h2 { font-size: 13pt; color: #1a3a5c; margin-top: 18px; margin-bottom: 8px; border-bottom: 1px solid #e9ecef; padding-bottom: 4px; }
+  p { margin-bottom: 8px; }
+  a { color: #2e86de; text-decoration: none; }
+  strong { color: #1a3a5c; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 10pt; }
+  th { background: #1a3a5c; color: #fff; text-align: left; padding: 6px 10px; font-weight: 600; }
+  td { padding: 5px 10px; border-bottom: 1px solid #e9ecef; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  ol, ul { margin: 6px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  pre { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 4px; padding: 10px 14px; font-size: 9pt; font-family: Consolas, monospace; overflow-x: auto; margin: 8px 0; }
+  .badge-done { background: #27ae60; color: #fff; padding: 1px 8px; border-radius: 10px; font-size: 9pt; }
+  .badge-planned { background: #e9ecef; color: #6c757d; padding: 1px 8px; border-radius: 10px; font-size: 9pt; }
+  hr { border: none; border-top: 1px solid #e9ecef; margin: 14px 0; }
+  .footer { margin-top: 20px; text-align: center; font-size: 9pt; color: #6c757d; font-style: italic; }
+</style>
+</head>
+<body>
+
+<h1>ClientLocker — Project Plan</h1>
+
+<h2>Project Overview</h2>
+<p><strong>ClientLocker</strong> is a secure client file management platform designed for accounting firms. It enables accountants to securely upload, organize, and share sensitive client documents — including tax returns, financial statements, and compliance records — through an intuitive web portal with enterprise-grade security.</p>
+<p><strong>Live URL:</strong> <a href="https://clientlocker.vercel.app">clientlocker.vercel.app</a> &nbsp;|&nbsp; <strong>Repository:</strong> <a href="https://github.com/Monesh782005/clientlocker">github.com/Monesh782005/clientlocker</a></p>
+
+<hr>
+
+<h2>Technology Stack</h2>
+<table>
+  <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+  <tr><td>Frontend</td><td>React 19 + Vite</td><td>Fast, component-based UI</td></tr>
+  <tr><td>Styling</td><td>Bootstrap 5</td><td>Responsive, professional design</td></tr>
+  <tr><td>Backend</td><td>Node.js + Express.js</td><td>REST API server</td></tr>
+  <tr><td>Database</td><td>Supabase PostgreSQL</td><td>Client and file metadata storage</td></tr>
+  <tr><td>Auth</td><td>Supabase Authentication</td><td>Secure login, role-based access</td></tr>
+  <tr><td>Storage</td><td>Supabase Storage</td><td>Encrypted client file storage</td></tr>
+  <tr><td>CI/CD</td><td>GitHub Actions</td><td>Automated build and secret scanning</td></tr>
+  <tr><td>Hosting</td><td>Vercel</td><td>Frontend deployment with auto-redeploy</td></tr>
+</table>
+
+<hr>
+
+<h2>Core Features (Planned)</h2>
+<ol>
+  <li><strong>Secure Authentication</strong> — Email/password login with Supabase Auth and role-based access (Admin, Accountant, Client).</li>
+  <li><strong>Client Management</strong> — Add, view, edit, and organize client profiles with contact info and notes.</li>
+  <li><strong>File Upload &amp; Storage</strong> — Drag-and-drop file upload with Supabase Storage; organized by client and category.</li>
+  <li><strong>File Sharing</strong> — Generate secure, time-limited download links for clients.</li>
+  <li><strong>Dashboard</strong> — Overview of recent uploads, client activity, and storage usage.</li>
+  <li><strong>Audit Trail</strong> — Log who uploaded, downloaded, or deleted files and when.</li>
+</ol>
+
+<hr>
+
+<h2>Project Milestones</h2>
+<table>
+  <tr><th>Milestone</th><th>Target Date</th><th>Deliverables</th><th>Status</th></tr>
+  <tr><td>M1</td><td>Nov 7</td><td>Project setup, GitHub repo, CI/CD, Vercel deploy, plan</td><td><span class="badge-done">✅ Complete</span></td></tr>
+  <tr><td>M2</td><td>Nov 21</td><td>Landing page, login/signup UI, Supabase Auth integration</td><td><span class="badge-planned">Planned</span></td></tr>
+  <tr><td>M3</td><td>Dec 5</td><td>Client CRUD, dashboard, database schema</td><td><span class="badge-planned">Planned</span></td></tr>
+  <tr><td>M4</td><td>Dec 19</td><td>File upload/download, storage integration</td><td><span class="badge-planned">Planned</span></td></tr>
+  <tr><td>M5</td><td>Jan 2</td><td>Sharing, audit trail, polish, final presentation</td><td><span class="badge-planned">Planned</span></td></tr>
+</table>
+
+<hr>
+
+<h2>Architecture</h2>
+<pre>┌──────────────┐         ┌──────────────┐         ┌──────────────────┐
+│   React +    │  HTTP   │  Express.js  │  SDK    │    Supabase      │
+│   Vite       │◄──────► │  REST API    │◄──────► │  (Auth, DB,      │
+│  (Vercel)    │         │  (Node.js)   │         │   Storage)       │
+└──────────────┘         └──────────────┘         └──────────────────┘
+     Client                  Server                   Cloud Services</pre>
+
+<hr>
+
+<h2>Security Measures</h2>
+<ul>
+  <li>Environment variables stored in <code>.env</code> files (never committed to Git)</li>
+  <li>Gitleaks GitHub Action scans every push for accidentally leaked secrets</li>
+  <li>Supabase Row Level Security (RLS) for database access control</li>
+  <li>HTTPS enforced via Vercel</li>
+  <li>CORS configured on the Express server</li>
+</ul>
+
+<hr>
+
+<h2>Team</h2>
+<table>
+  <tr><th>Role</th><th>Name</th></tr>
+  <tr><td>Full-Stack Developer</td><td>Monesh</td></tr>
+</table>
+
+<div class="footer">Vizdale Full-Stack Developer Internship — November 2026</div>
+
+</body>
+</html>
+

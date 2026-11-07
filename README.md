@@ -2,6 +2,8 @@
 
 A secure client file management platform built for accounting firms.
 
+🔗 **Live Demo:** [clientlocker.vercel.app](https://clientlocker.vercel.app)
+
 ## Tech Stack
 
 - **Frontend:** React 19 + Vite, Bootstrap 5
